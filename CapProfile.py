@@ -1,10 +1,37 @@
+# -*- coding: utf-8 -*-
+'''   ______            ____             _____ __   
+  / ____/___ _____  / __ \_________  / __(_) /__ 
+ / /   / __ `/ __ \/ /_/ / ___/ __ \/ /_/ / / _ \
+/ /___/ /_/ / /_/ / ____/ /  / /_/ / __/ / /  __/
+\____/\__,_/ .___/_/   /_/   \____/_/ /_/_/\___/ 
+          /_/                                    
+'''
+#########################################################
+#   CapProfile.py
+#
+# It is an application that allows you to obtain, send 
+# and analyze search trends in real time on the Facebook 
+# platform. With this tool, you can set priority topics 
+# and receive notifications when those topics are among 
+# the popular trends. In addition, the application stores
+# trends in a database and displays graphs to visualize 
+# trends over time.
+#
+#
+# 10/18/23 - Changed to Python3 (finally)
+#
+# Author: Facundo Fernandez 
+#
+#
+#########################################################
+
 import requests
 from bs4 import BeautifulSoup
 import time
 import random
 import concurrent.futures
 from requests.exceptions import RequestException, Timeout
-from transformers import pipeline, TextClassificationPipeline
+from transformers import pipeline, AutoModelForSequenceClassification, AutoTokenizer
 import logging
 import urllib3
 import re
@@ -141,10 +168,16 @@ def get_profile_text(profile_url):
 
 
 def analyze_sentiments(results):
+    # Utiliza AutoModelForSequenceClassification para cargar el modelo sin depender de PyTorch o TensorFlow
+    model = AutoModelForSequenceClassification.from_pretrained("distilbert-base-uncased-finetuned-sst-2-english")
+    tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased-finetuned-sst-2-english")
+    sentiment_analyzer = pipeline("sentiment-analysis", model=model, tokenizer=tokenizer)
+
+
     # Creating text processing pipelines for sentiment analysis, entity extraction, and aspect analysis / Creación de tuberías de procesamiento de texto para análisis de sentimientos, extracción de entidades y análisis de aspectos
-    sentiment_analyzer = pipeline("sentiment-analysis")
-    entity_extractor = pipeline("ner")
-    aspect_analyzer = TextClassificationPipeline("aspect-based-sentiment-analysis")
+#    sentiment_analyzer = pipeline("sentiment-analysis", model="distilbert-base-uncased-finetuned-sst-2-english")
+#    entity_extractor = pipeline("ner")
+#    aspect_analyzer = TextClassificationPipeline("aspect-based-sentiment-analysis")
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
         futures = []
@@ -164,7 +197,6 @@ def analyze_sentiments(results):
             logging.info("Entities: %s", result["entities"])
             logging.info("Aspects: %s", result["aspects"])
             logging.info("---")
-
 
 def analyze_profile(result, sentiment_analyzer, entity_extractor, aspect_analyzer):
     text = get_profile_text(result["url"])
