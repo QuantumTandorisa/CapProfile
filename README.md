@@ -1,13 +1,3 @@
-# CapProfile
-'''
- ______            ____             _____ __   
-  / ____/___ _____  / __ \_________  / __(_) /__ 
- / /   / __ `/ __ \/ /_/ / ___/ __ \/ /_/ / / _ \
-/ /___/ /_/ / /_/ / ____/ /  / /_/ / __/ / /  __/
-\____/\__,_/ .___/_/   /_/   \____/_/ /_/_/\___/ 
-          /_/                                    
-'''
-## Descripción
 CapProfile es una aplicación que te permite obtener, enviar y analizar tendencias de búsqueda en tiempo real en la plataforma de Facebook. Con esta herramienta, puedes establecer temas prioritarios y recibir notificaciones cuando esos temas se encuentren entre las tendencias populares. Además, la aplicación almacena tendencias en una base de datos y muestra gráficos para visualizar tendencias a lo largo del tiempo.
 
 ## Requisitos
