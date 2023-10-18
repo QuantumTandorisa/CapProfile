@@ -1,42 +1,49 @@
+# CapProfile
+ ______            ____             _____ __   
+  / ____/___ _____  / __ \_________  / __(_) /__ 
+ / /   / __ `/ __ \/ /_/ / ___/ __ \/ /_/ / / _ \
+/ /___/ /_/ / /_/ / ____/ /  / /_/ / __/ / /  __/
+\____/\__,_/ .___/_/   /_/   \____/_/ /_/_/\___/ 
+          /_/                                    
 
-   README
+## Descripción
+CapProfile es una aplicación que te permite obtener, enviar y analizar tendencias de búsqueda en tiempo real en la plataforma de Facebook. Con esta herramienta, puedes establecer temas prioritarios y recibir notificaciones cuando esos temas se encuentren entre las tendencias populares. Además, la aplicación almacena tendencias en una base de datos y muestra gráficos para visualizar tendencias a lo largo del tiempo.
 
-   Este proyecto consiste en un script en Python que realiza búsquedas en Facebook y analiza los sentimientos, las entidades y los aspectos de los perfiles encontrados.
-
-   Requisitos previos
-
-        - Python 3.7 o superior
-        - Paquetes de Python: requests, BeautifulSoup, concurrent.futures, transformers
-
-   Configuración
-
-   Antes de ejecutar el script, asegúrate de configurar correctamente las siguientes variables en el archivo `script.py`:
-
-        - `USER_AGENTS`: Una lista de User Agents que simulan diferentes navegadores.
-        - `PROXIES`: Una lista de proxies para realizar las solicitudes.
-        - `logging.basicConfig()`: Configura el nivel de registro y el archivo de registro.
-
-   Uso
-
-   1. Asegúrate de tener instalados todos los paquetes de Python necesarios. Puedes instalarlos ejecutando el siguiente comando:
-
-     pip install -r requirements.txt
+## Requisitos
+- Python 3.x
+- Bibliotecas requeridas, que puedes instalar ejecutando `pip install -r requirements.txt`.
+- instalar PyTorch y sus componentes en tu entorno virtual. Asegúrate de ejecutar el siguiente comando.
+`(myenv) $ pip install torch==1.9.1+cpu torchvision==0.10.1+cpu torchaudio==0.9.1 -f https://download.pytorch.org/whl/torch_stable.html`
 
 
-   El script buscará perfiles de Facebook basados en las consultas proporcionadas y analizará los sentimientos, las entidades y los aspectos de los perfiles encontrados.
-   Los resultados se guardarán en un archivo `results.txt` y se registrarán en el archivo `facebook_search.log`.
+## Funcionalidades
 
-   Personalización
+- **Búsqueda en Facebook:** CapProfile realiza búsquedas en Facebook utilizando consultas y muestra resultados con nombres de perfil y URL de perfiles de usuario relevantes.
 
-   Puedes personalizar el comportamiento del script modificando los siguientes parámetros:
+- **Análisis de Sentimientos:** La aplicación utiliza el análisis de sentimientos para evaluar el contenido de los perfiles y proporciona información sobre el sentimiento general de las publicaciones.
 
-        - `queries`: Una lista de consultas para buscar perfiles en Facebook.
-        - `num_results`: El número máximo de resultados por consulta.
+- **Extracción de Entidades:** CapProfile también puede extraer entidades de texto, como nombres, lugares y otros elementos relevantes en las publicaciones.
 
-   Contribución
+- **Análisis de Aspectos:** La herramienta realiza un análisis de aspectos para identificar temas específicos dentro de las publicaciones.
 
-   Si deseas contribuir a este proyecto, siéntete libre de enviar pull requests o abrir issues en el repositorio.
+- **Almacenamiento de Resultados:** Los resultados de las búsquedas y los análisis se pueden guardar en un archivo de texto llamado `results.txt`.
 
-   Notas
+## Uso
 
-   Este script se proporciona con fines educativos y de demostración. Úsalo con responsabilidad.
+1. Configura las consultas que deseas buscar en la lista `queries` en el script `CapProfile.py`.
+
+2. Ejecuta el script con Python 3.x usando el comando:
+   ```bash
+   python3 CapProfile.py
+
+## Personalización
+
+Puedes personalizar la aplicación ajustando las siguientes variables en el script:
+
+queries: Agrega o modifica las consultas que deseas buscar.
+
+num_results: Establece el número de resultados que deseas obtener por consulta.
+
+save_results: Cambia a True si deseas guardar los resultados en el archivo results.txt.
+
+Puedes ajustar los agentes de usuario (USER_AGENTS) y las configuraciones de proxy (PROXIES) según tus necesidades
