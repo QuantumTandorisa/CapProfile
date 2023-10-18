@@ -1,13 +1,6 @@
 CapProfile es una aplicación que te permite obtener, enviar y analizar tendencias de búsqueda en tiempo real en la plataforma de Facebook. Con esta herramienta, puedes establecer temas prioritarios y recibir notificaciones cuando esos temas se encuentren entre las tendencias populares. Además, la aplicación almacena tendencias en una base de datos y muestra gráficos para visualizar tendencias a lo largo del tiempo.
 
-## Requisitos
-- Python 3.x
-- Bibliotecas requeridas, que puedes instalar ejecutando `pip install -r requirements.txt`.
-- instalar PyTorch y sus componentes en tu entorno virtual. Asegúrate de ejecutar el siguiente comando.
-`(myenv) $ pip install torch==1.9.1+cpu torchvision==0.10.1+cpu torchaudio==0.9.1 -f https://download.pytorch.org/whl/torch_stable.html`
-
-
-## Funcionalidades
+## Características
 
 - **Búsqueda en Facebook:** CapProfile realiza búsquedas en Facebook utilizando consultas y muestra resultados con nombres de perfil y URL de perfiles de usuario relevantes.
 
@@ -19,6 +12,12 @@ CapProfile es una aplicación que te permite obtener, enviar y analizar tendenci
 
 - **Almacenamiento de Resultados:** Los resultados de las búsquedas y los análisis se pueden guardar en un archivo de texto llamado `results.txt`.
 
+## Requisitos
+- Python 3.x
+- Bibliotecas requeridas, que puedes instalar ejecutando `pip install -r requirements.txt`.
+- instalar PyTorch y sus componentes en tu entorno virtual. Asegúrate de ejecutar el siguiente comando.
+`(myenv) $ pip install torch==1.9.1+cpu torchvision==0.10.1+cpu torchaudio==0.9.1 -f https://download.pytorch.org/whl/torch_stable.html`
+
 ## Uso
 
 1. Configura las consultas que deseas buscar en la lista `queries` en el script `CapProfile.py`.
@@ -27,7 +26,7 @@ CapProfile es una aplicación que te permite obtener, enviar y analizar tendenci
    ```bash
    python3 CapProfile.py
 
-## Personalización
+## Configuración de API
 
 Puedes personalizar la aplicación ajustando las siguientes variables en el script:
 
