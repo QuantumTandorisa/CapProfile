@@ -2,15 +2,15 @@ CapProfile es una aplicación que te permite obtener, enviar y analizar tendenci
 
 ## Características
 
-- **Búsqueda en Facebook:** CapProfile realiza búsquedas en Facebook utilizando consultas y muestra resultados con nombres de perfil y URL de perfiles de usuario relevantes.
+- Búsqueda en Facebook: CapProfile realiza búsquedas en Facebook utilizando consultas y muestra resultados con nombres de perfil y URL de perfiles de usuario relevantes.
 
-- **Análisis de Sentimientos:** La aplicación utiliza el análisis de sentimientos para evaluar el contenido de los perfiles y proporciona información sobre el sentimiento general de las publicaciones.
+- Análisis de Sentimientos: La aplicación utiliza el análisis de sentimientos para evaluar el contenido de los perfiles y proporciona información sobre el sentimiento general de las publicaciones.
 
-- **Extracción de Entidades:** CapProfile también puede extraer entidades de texto, como nombres, lugares y otros elementos relevantes en las publicaciones.
+- Extracción de Entidades: CapProfile también puede extraer entidades de texto, como nombres, lugares y otros elementos relevantes en las publicaciones.
 
-- **Análisis de Aspectos:** La herramienta realiza un análisis de aspectos para identificar temas específicos dentro de las publicaciones.
+- Análisis de Aspectos: La herramienta realiza un análisis de aspectos para identificar temas específicos dentro de las publicaciones.
 
-- **Almacenamiento de Resultados:** Los resultados de las búsquedas y los análisis se pueden guardar en un archivo de texto llamado `results.txt`.
+- Almacenamiento de Resultados: Los resultados de las búsquedas y los análisis se pueden guardar en un archivo de texto llamado `results.txt`.
 
 ## Requisitos
 - Python 3.x
@@ -20,20 +20,13 @@ CapProfile es una aplicación que te permite obtener, enviar y analizar tendenci
 
 ## Uso
 
-1. Configura las consultas que deseas buscar en la lista `queries` en el script `CapProfile.py`.
-
-2. Ejecuta el script con Python 3.x usando el comando:
-   ```bash
-   python3 CapProfile.py
+-  Configura las consultas que deseas buscar en la lista `queries` en el script `CapProfile.py`.
+-  Ejecuta el script con Python 3.x usando el comando: `python3 CapProfile.py`.
 
 ## Configuración de API
 
 Puedes personalizar la aplicación ajustando las siguientes variables en el script:
-
 queries: Agrega o modifica las consultas que deseas buscar.
-
 num_results: Establece el número de resultados que deseas obtener por consulta.
-
 save_results: Cambia a True si deseas guardar los resultados en el archivo results.txt.
-
 Puedes ajustar los agentes de usuario (USER_AGENTS) y las configuraciones de proxy (PROXIES) según tus necesidades
